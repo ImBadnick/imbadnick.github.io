@@ -1,0 +1,318 @@
+html,body
+{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+
+body {
+    margin: 0%;
+}
+
+h1, h3{
+    font-family: montserrat,sans-serif;
+    color: #98a6ad;
+}
+
+p {
+    color: #c4c5c3;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.container{
+    align-items: center;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+                            /* -------------------------------- NAV BAR  ------------------------*/
+
+#nav{
+    font-family: roboto,sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+    padding: 0 1rem;
+    width: 100%;
+    background-color: #f7f7f7;
+    align-items: center;
+}
+
+#nav > .container{
+    display: flex;
+    padding-right: 50px;
+    padding-left: 50px;
+}
+
+#name{
+    width: 100%;
+    padding: 14px;
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 1.25;
+    text-rendering: optimizeLegibility;
+}
+
+#menu{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    font-size: 14px;
+    justify-content: flex-end;
+    list-style-type: none; /* Removes the list points */
+}
+
+#menu a:hover:not(:first-child){
+    background-color: #ddd;
+    color: black;
+}
+
+#menu .icon {
+    display: none;
+  }
+
+.menu-item{
+    padding:14px;
+}
+
+
+                            /* --------------------------- ABOUT ME ------------------------------- */
+
+#aboutme{
+    background-color: #2f3244;
+    padding: 80px;
+    padding-top: 110px;
+}
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+    justify-content: center;
+}
+
+.aboutmeColumn{
+    position: relative;
+    flex-direction: column;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+/* ------- ABOUT ME LEFT --------- */
+
+
+.avatar{
+    width: 200px;
+    height: 200px;
+}
+
+.socialIcons{
+    width: 45px;
+    height: 45px;
+    padding-left: 2px;
+    padding-top:20px
+}
+
+#myImage {
+    display: flex;
+    justify-content: center;
+}
+
+#info > h1,h3,h5 {
+    color: #c4c5c3;
+    text-align: center;
+}
+
+/* ------- ABOUT ME RIGHT --------- */
+
+#ToolsIcons{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.toolsIcons{
+    width: 70px;
+    height: 70px;
+}
+
+.tools{
+    padding-right: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+#biography > h1 {
+    margin-top: 0%;
+}
+
+                /* --------------------------------- PROJECTS --------------------------------- */
+
+#projects{
+    background-color: #282a36;
+    padding: 80px;
+}
+
+#ProjectsContainer{
+    display: grid;
+    grid-gap: 70px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, max-content)); 
+    grid-auto-rows: 1fr;
+}
+
+.Project{
+    text-align: center;
+    border-style: solid;
+    word-wrap:break-word;
+}
+
+.ProjectButtons{
+    padding-bottom: 5%;
+}
+
+
+
+                /* --------------------------------- CONTACT --------------------------------- */
+
+#contact{
+    background-color: #2f3244;
+    padding: 110px;
+}
+
+label {
+    color: #98a6ad;
+}
+
+.flex-outer,
+.flex-inner {
+  list-style-type: none;
+  padding: 0;
+}
+
+.flex-outer {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.flex-outer li,
+.flex-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.flex-inner {
+  padding: 0 8px;
+  justify-content: space-between;  
+}
+
+.flex-outer > li:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.flex-outer li label,
+.flex-outer li p {
+  padding: 8px;
+  font-weight: 300;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+
+.flex-outer > li > label,
+.flex-outer li p {
+  flex: 1 0 120px;
+  max-width: 220px;
+}
+
+.flex-outer > li > label + *,
+.flex-inner {
+  flex: 1 0 220px;
+}
+
+.flex-outer li p {
+  margin: 0;
+}
+
+.flex-outer li input:not([type='checkbox']),
+.flex-outer li textarea {
+  padding: 15px;
+  border: none;
+}
+
+.flex-outer li button {
+  margin-left: auto;
+  padding: 8px 16px;
+  border: none;
+  background: #333;
+  color: #f2f2f2;
+  text-transform: uppercase;
+  letter-spacing: .09em;
+  border-radius: 2px;
+}
+
+.flex-inner li {
+  width: 100px;
+}
+
+.flex-outer > li:last-child {
+    display: flex;
+    flex-direction: row;
+}
+
+#foot{
+    background-color: #282a36;
+    padding: 20px;
+}
+
+#foot > .container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.returnTOP {
+    height: 60px;
+    width: 60px;
+}
+
+
+
+/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
+@media screen and (max-width: 650px) {
+    #menu a {display: none;}
+     #menu a.icon {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+  }
+  
+  /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+  @media screen and (max-width: 650px) {
+    #nav > .container { padding-top: 10px;}
+    #menu.responsive {display: flex; flex-direction: column;}
+    .menu-item {
+        display: flex;
+        justify-content: flex-start;
+    }
+    #menu.responsive a{
+    display: flex;
+    justify-content: center;
+    padding-left: 0%;
+    }
+  }
