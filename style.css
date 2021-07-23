@@ -115,17 +115,29 @@ a {
 
 /* ------- ABOUT ME LEFT --------- */
 
+#aboutmeLeft{
+    padding-bottom: 20px;
+}
+
+#info{
+    padding-bottom: 10px;
+}
 
 .avatar{
     width: 200px;
     height: 200px;
 }
 
+#social{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
 .socialIcons{
     width: 45px;
     height: 45px;
     padding-left: 2px;
-    padding-top:20px
 }
 
 #myImage {
@@ -169,16 +181,16 @@ a {
 }
 
 #ProjectsContainer{
-    display: grid;
-    grid-gap: 70px;
-    grid-template-columns: repeat(auto-fill, minmax(300px, max-content)); 
-    grid-auto-rows: 1fr;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 .Project{
     text-align: center;
     border-style: solid;
     word-wrap:break-word;
+    width: 100%;
 }
 
 .ProjectButtons{
@@ -191,7 +203,7 @@ a {
 
 #contact{
     background-color: #2f3244;
-    padding: 110px;
+    padding: 80px;
 }
 
 label {
