@@ -25,6 +25,8 @@ a {
     color: black;
 }
 
+img {max-width:100%;}
+
 .container{
     align-items: center;
     width: 100%;
@@ -132,6 +134,7 @@ a {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .socialIcons{
@@ -180,17 +183,23 @@ a {
     padding: 80px;
 }
 
+#projects {
+    text-align: center;
+}
+
 #ProjectsContainer{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .Project{
     text-align: center;
     border-style: solid;
     word-wrap:break-word;
-    width: 100%;
+    width: 40%;
+    margin: 10px;
 }
 
 .ProjectButtons{
