@@ -1,0 +1,192 @@
+/* Theme variables */
+:root[data-theme="light"] {
+    --primary-color: #2563eb;
+    --text-primary: #1f2937;
+    --text-secondary: #4b5563;
+    --bg-primary: #ffffff;
+    --bg-secondary: #f3f4f6;
+    --project-bg: #f3f4f6;
+    --project-text: #1f2937;
+    --nav-bg: rgba(255, 255, 255, 0.95);
+    --nav-text: #1f2937;
+    --input-bg: #f3f4f6;
+    --border-color: rgba(0, 0, 0, 0.1);
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --menu-hover: #ddd;
+    --social-icon-bg: #f3f4f6;
+    --social-icon-hover: #2563eb;
+    --social-icon-filter: none;
+    --tools-bg: #f3f4f6;
+    --tools-hover: #e5e7eb;
+}
+
+:root[data-theme="dark"] {
+    --primary-color: #60a5fa;
+    --text-primary: #f3f4f6;
+    --text-secondary: #d1d5db;
+    --bg-primary: #1f2937;
+    --bg-secondary: #111827;
+    --project-bg: #374151;
+    --project-text: #e5e7eb;
+    --nav-bg: rgba(17, 24, 39, 0.95);
+    --nav-text: #f3f4f6;
+    --input-bg: #374151;
+    --border-color: rgba(255, 255, 255, 0.1);
+    --shadow-color: rgba(0, 0, 0, 0.3);
+    --menu-hover: #374151;
+    --social-icon-bg: #374151;
+    --social-icon-hover: #60a5fa;
+    --social-icon-filter: none;
+    --tools-bg: #374151;
+    --tools-hover: #4b5563;
+}
+
+/* Theme transition */
+* {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, fill 0.3s ease, filter 0.3s ease;
+}
+
+/* Initial theme state to prevent flash */
+:root {
+    color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+    color-scheme: dark;
+}
+
+/* Theme toggle button */
+.theme-toggle {
+    background: none;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-primary);
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1);
+}
+
+.theme-toggle:active {
+    transform: scale(0.95);
+}
+
+.theme-toggle svg {
+    width: 24px;
+    height: 24px;
+    fill: var(--text-primary);
+    stroke: var(--text-primary);
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    filter: drop-shadow(0 1px 2px var(--shadow-color));
+    opacity: 1;
+    transition: transform 0.3s ease;
+}
+
+.theme-toggle .sun-icon svg {
+    transform: scale(1.1);
+    fill: #FFD700;
+    stroke: #FFA500;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    filter: drop-shadow(0 2px 4px rgba(255, 165, 0, 0.3));
+}
+
+.sun-icon {
+    display: none;
+}
+
+[data-theme="dark"] .sun-icon {
+    display: none;
+}
+
+[data-theme="dark"] .moon-icon {
+    display: block;
+}
+
+.theme-toggle .moon-icon {
+    display: block;
+}
+
+[data-theme="light"] .sun-icon {
+    display: block;
+}
+
+[data-theme="light"] .moon-icon {
+    display: none;
+}
+
+.theme-toggle svg path {
+    fill: var(--text-primary);
+    stroke: var(--text-primary);
+    stroke-width: 2;
+}
+
+/* Global theme styles */
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+/* Dark mode specific styles */
+#nav {
+    background-color: var(--nav-bg);
+}
+
+#nav a {
+    color: var(--nav-text);
+}
+
+.socialIcons {
+    filter: var(--social-icon-filter);
+}
+
+[data-theme="dark"] #aboutme,
+[data-theme="dark"] #projects,
+[data-theme="dark"] #contact {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .Project {
+    background-color: var(--project-bg);
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .tools {
+    background-color: var(--bg-secondary);
+}
+
+[data-theme="dark"] .tools:hover {
+    background-color: var(--project-bg);
+}
+
+[data-theme="dark"] input,
+[data-theme="dark"] textarea {
+    background-color: var(--input-bg);
+    color: var(--text-primary);
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .projectPage {
+    background-color: var(--bg-primary);
+}
+
+[data-theme="dark"] .projectPage h1,
+[data-theme="dark"] .projectPage h2,
+[data-theme="dark"] .projectPage h3 {
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .projectPage p,
+[data-theme="dark"] .projectPage ul {
+    color: var(--text-secondary);
+}

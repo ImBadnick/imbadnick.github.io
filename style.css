@@ -1,32 +1,47 @@
-html,body
-{
-    width: 100%;
-    height: 100%;
-    margin: 0px;
-    padding: 0px;
-    overflow-x:hidden;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+    --transition: all 0.3s ease;
 }
 
 
-body {
-    margin: 0%;
+html,body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 h1 {
-    font-size: 2.5em;
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
 }
 
 h2 {
-    font-size: 2.5em;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
 }
 
-h1, h2, h3{
-    font-family: montserrat,sans-serif;
-    color: #98a6ad;
+h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+h1, h2, h3 {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-primary);
+    font-weight: 700;
+    line-height: 1.2;
 }
 
 p {
-    color: #c4c5c3;
+    color: var(--text-secondary);
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
 }
 
 a {
@@ -49,18 +64,18 @@ img {
 
                             /* -------------------------------- NAV BAR  ------------------------*/
 
-#nav{
-    font-family: roboto,sans-serif;
-    position: fixed;
+#nav {
+    font-family: 'Inter', sans-serif;
     top: 0;
     right: 0;
     left: 0;
     z-index: 1030;
-    padding: 0 1rem;
+    padding: 1rem;
     width: 100%;
-    background-color: #f7f7f7;
-    align-items: center;
-    overflow-y: visible;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    transition: var(--transition);
 }
 
 #nav > .container{
@@ -89,8 +104,8 @@ img {
 }
 
 #menu a:hover:not(:first-child){
-    background-color: #ddd;
-    color: black;
+    background-color: var(--menu-hover);
+    color: var(--text-primary);
 }
 
 #menu .icon {
@@ -104,10 +119,12 @@ img {
 
                             /* --------------------------- ABOUT ME ------------------------------- */
 
-#aboutme{
-    background-color: #2f3244;
-    padding: 80px;
-    padding-top: 110px;
+#aboutme {
+    background-color: var(--bg-primary);
+    padding: 80px 80px;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
 }
 
 .row{
@@ -147,10 +164,20 @@ img {
     justify-content: center;
 }
 
-.socialIcons{
+.socialIcons {
     width: 45px;
     height: 45px;
-    padding-left: 2px;
+    padding: 8px;
+    margin: 0 8px;
+    border-radius: 50%;
+    background-color: var(--bg-secondary);
+    transition: var(--transition);
+}
+
+.socialIcons:hover {
+    transform: translateY(-3px);
+    background-color: var(--primary-color);
+    filter: brightness(1.1);
 }
 
 #myImage {
@@ -162,27 +189,48 @@ img {
 #info > h2,
 #info > h3,
 #info > h4 {
-    color: #c4c5c3;
+    color: var(--text-primary);
     text-align: center;
 }
 
 /* ------- ABOUT ME RIGHT --------- */
 
-#ToolsIcons{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
+#ToolsIcons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
 }
 
-.toolsIcons{
-    width: 70px;
-    height: 70px;
-}
-
-.tools{
-    padding-right: 20px;
-    padding-bottom: 20px;
+.tools {
+    background-color: var(--bg-secondary);
+    padding: 1.5rem;
+    border-radius: 1rem;
     text-align: center;
+    transition: var(--transition);
+}
+
+.tools:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    background-color: white;
+}
+
+.toolsIcons {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 1rem;
+    transition: var(--transition);
+}
+
+.tools:hover .toolsIcons {
+    transform: scale(1.1);
+}
+
+.tools p {
+    margin: 0;
+    font-weight: 500;
+    color: var(--text-primary);
 }
 
 #biography > h2,
@@ -193,39 +241,62 @@ img {
 
                 /* --------------------------------- PROJECTS --------------------------------- */
 
-#projects{
-    background-color: #272831;
-    padding: 5%;
+#projects {
+    background-color: var(--bg-secondary);
+    padding: 80px 80px;
+    min-height: 100vh;
 }
 
 #projects {
     text-align: center;
 }
 
-#ProjectsContainer{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
+#ProjectsContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
-.Project{
+.Project {
     display: flex;
     flex-direction: column;
-    text-align: center;
-    border-style: solid;
-    border-radius: 5%;
-    border-color: #f7f7f7;
-    background-color: #282a36;
-    word-wrap:break-word;
-    width: 40%;
-    margin: 10px;
+    text-align: left;
+    background-color: var(--bg-primary);
+    word-wrap: break-word;
+    height: 100%;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.Project:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
 }
 
 .Project > img {
-    max-width: 250px;
-    width: 100%;
+    max-width: min(200px, 90%);
+    height: auto;
     align-self: center;
+    object-fit: contain;
+    transition: var(--transition);
+}
+
+@media screen and (max-width: 1200px) {
+    .Project > img {
+        max-width: min(180px, 85%);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .Project > img {
+        max-width: min(150px, 80%);
+    }
 }
 
 .Project > h3 {
@@ -239,13 +310,14 @@ img {
     margin-left: 5%;
 }
 
-.ProjectButtons{
-    padding-bottom: 5%;
+.ProjectButtons {
+    padding: 1rem 0;
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
     justify-content: center;
+    gap: 0.5rem;
     height: 100%;
+    flex-wrap: nowrap;
 }
 
 .ProjectButtons > .githubButton {
@@ -256,10 +328,13 @@ img {
 
                 /* --------------------------------- CONTACT --------------------------------- */
 
-#contact{
-    background-color: #2f3244;
-    padding: 8%;
-    padding-right: 12%;
+#contact {
+    background-color: var(--bg-primary);
+    padding: 80px 80px;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
 }
 
 label {
@@ -303,7 +378,6 @@ label {
 
 .flex-outer > li > label,
 .flex-outer li p {
-  flex: 1 0 120px;
   max-width: 220px;
 }
 
@@ -318,19 +392,38 @@ label {
 
 .flex-outer li input:not([type='checkbox']),
 .flex-outer li textarea {
-  padding: 15px;
-  border: none;
+    padding: 1rem;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;
+    background-color: var(--bg-secondary);
+    transition: var(--transition);
+}
+
+.flex-outer li input:focus,
+.flex-outer li textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
 }
 
 .flex-outer li button {
-  margin-left: auto;
-  padding: 8px 16px;
-  border: none;
-  background: #333;
-  color: #f2f2f2;
-  text-transform: uppercase;
-  letter-spacing: .09em;
-  border-radius: 2px;
+    margin-left: initial;
+    padding: 1rem 2rem;
+    border: none;
+    background: var(--primary-color);
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-radius: 0.5rem;
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.flex-outer li button:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .flex-inner li {
@@ -339,7 +432,7 @@ label {
 
 .flex-outer > li:last-child {
     display: flex;
-    flex-direction: row;
+    justify-content: center;
 }
 
 
@@ -348,7 +441,7 @@ label {
 
 
 #foot{
-    background-color: #272831;
+    background-color: var(--bg-secondary);
     padding: 20px;
 }
 
@@ -365,6 +458,105 @@ label {
 
 
  /* --------------------------------- Mobile --------------------------------- */
+
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    #nav > .container {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+
+    #menu {
+        display: none;
+        width: 100%;
+        text-align: center;
+        padding: 1rem 0;
+    }
+
+    #menu.responsive {
+        display: flex;
+        flex-direction: column;
+        background-color: var(--bg-primary);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        animation: slideDown 0.3s ease-in-out;
+    }
+
+    @keyframes slideDown {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    #menu .icon {
+        display: block;
+        position: absolute;
+        right: 1rem;
+        top: 1rem;
+        font-size: 1.5rem;
+    }
+
+    .menu-item {
+        width: 100%;
+        text-align: center;
+        padding: 1rem;
+    }
+
+    #aboutme {
+        padding: 100px 20px;
+    }
+
+    #biography {
+        text-align: center;
+    }
+
+    #tools {
+        text-align: center;
+    }
+
+    #ToolsIcons {
+        justify-content: center;
+    }
+
+    .tools p {
+        text-align: center;
+    }
+
+    #ProjectsContainer {
+        grid-template-columns: 1fr;
+        padding: 0.5rem;
+    }
+
+    .Project {
+        text-align: center;
+    }
+
+    .tools {
+        padding: 1rem;
+    }
+
+    .socialIcons {
+        width: 35px;
+        height: 35px;
+        padding: 6px;
+        margin: 0 6px;
+    }
+}
 
 
 /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
@@ -386,13 +578,22 @@ label {
         justify-content: flex-start;
     }
     #menu.responsive a{
-    display: flex;
-    justify-content: center;
-    padding-left: 0%;
+        display: flex;
+        justify-content: center;
+        padding-left: 0%;
     }
 
     .Project{
         width: 100%;
+    }
+
+    .ProjectButtons {
+        padding: 0.5rem 0;
+        margin: 5%;
+    }
+
+    .ProjectButtons a {
+        font-size: 0.9rem;
     }
   }
 
@@ -402,44 +603,35 @@ label {
 
  /* --------------------------------- PROJECTS PAGES --------------------------------- */
 
- .projectPage{
-    background-color: #282a36;
-    padding: 80px;
-    padding-top: 110px;
-    padding-bottom: 110px;
-    overflow: hidden;
+.githubButton {
+    text-align: center;
 }
 
-.projectPage .container > h1,
-.projectPage .container > h2,
-.projectPage .container > p{
-    margin: 0%;
+.githubButton a {
+    display: inline-flex;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: var(--project-bg);
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 4px var(--shadow-color);
 }
 
-.projectPage .container > h3 {
-    width: 100%;
+.githubButton a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px var(--shadow-color);
 }
 
-.projectPage > .container {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: center;
-    
+.githubButton img.githubLogo {
+    width: 24px;
+    height: 24px;
+    margin: 0.75rem;
 }
 
-.projectPage > .container > p{
-    word-wrap:break-word;
-    width: 100%;
-}
-
-.projectPage > .container > ul{
-    color: #c4c5c3;
-    width: 100%;
-}
-
-.projectPageButton {
-    margin: 40px;
+.githubButton p {
+    margin: 0;
+    color: var(--project-text);
+    font-weight: 500;
 }
 
 .githubButton{
@@ -451,11 +643,10 @@ label {
     flex-direction: row;
     flex-wrap: wrap;
     border-style: solid;
-    border-color: #ff914d;
+    border-color: var(--primary-color);
     border-radius: .3rem;
     padding: 4px;
     margin-top: 20px;
-    
 }
 
 .githubLogo {
@@ -468,5 +659,33 @@ label {
     margin: 0px;
     padding: 10px;
     align-self: center;
-    color: #ff914d;
+    color: var(--primary-color);
+}
+
+/* Theme toggle button styles */
+.theme-toggle {
+    margin-right: 1rem;
+    padding: 0.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    color: var(--text-primary);
+    transition: var(--transition);
+}
+
+.theme-toggle svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+}
+
+/* Show/hide icons based on theme */
+[data-theme="light"] .moon-icon {
+    display: none;
+}
+
+[data-theme="dark"] .sun-icon {
+    display: none;
 }
